@@ -1,23 +1,35 @@
-import icons from '@/constants/icons'
-import { Tabs } from 'expo-router'
-import React from 'react'
-import { Image, Text, View } from 'react-native'
+import icons from "@/constants/icons";
+import { Tabs } from "expo-router";
+import React from "react";
+import { Image, Text, View } from "react-native";
 
-const TabIcon = ({focused, icon, title}: {focused: boolean, icon: any, title: string}) => {
-    return (
-        <View className='flex-1 mt-3 flex flex-col items-center'>
-            <Image
-              source={icon}
-              resizeMode="contain"
-              // tintColor={focused ? '#0061FF' : '#666876'}
-              className='size-6'
-            />
-            <Text className={`text-${focused ? '#0061FF' : '#666876'} text-xs w-full text-center mt-1`}>
-              {title}
-            </Text>
-        </View>
-    )
-}
+const TabIcon = ({
+  focused,
+  icon,
+  title,
+}: {
+  focused: boolean;
+  icon: any;
+  title: string;
+}) => {
+  return (
+    <View className="flex-1 mt-2 flex flex-col items-center ">
+      <Image
+        source={icon}
+        resizeMode="contain"
+        tintColor={focused ? "#ff0000ff" : "#d8d8d8ff"}
+        className="size-7"
+      />
+      <Text
+        className={`text-sm w-full text-center ${
+          focused ? "text-primary font-bold" : "text-inactive font-medium"
+        }`}
+      >
+        {title}
+      </Text>
+    </View>
+  );
+};
 
 const TabLayout = () => {
   return (
@@ -25,18 +37,16 @@ const TabLayout = () => {
       screenOptions={{
         tabBarShowLabel: false,
         tabBarStyle: {
-          backgroundColor: '#E6F4FE',
-          position: 'absolute',
-          bottom: 0,
-          left: 0,
-          right: 0,
-          height: 60,
-          paddingVertical: 10,
+          backgroundColor: "#242424ff",
+          position: "absolute",
+          height: 70,
+          borderTopColor: "#0061FF1A",
+          borderTopWidth: 1,
         },
       }}
     >
-      <Tabs.Screen 
-        name="index" 
+      <Tabs.Screen
+        name="index"
         options={{
           title: "Today",
           headerShown: false,
@@ -45,8 +55,8 @@ const TabLayout = () => {
           ),
         }}
       />
-      <Tabs.Screen 
-        name="Upcoming" 
+      <Tabs.Screen
+        name="Upcoming"
         options={{
           title: "Upcoming",
           headerShown: false,
@@ -55,8 +65,8 @@ const TabLayout = () => {
           ),
         }}
       />
-      <Tabs.Screen 
-        name="Browse" 
+      <Tabs.Screen
+        name="Browse"
         options={{
           title: "Browse",
           headerShown: false,
@@ -66,7 +76,7 @@ const TabLayout = () => {
         }}
       />
     </Tabs>
-  )
-}
+  );
+};
 
-export default TabLayout
+export default TabLayout;
