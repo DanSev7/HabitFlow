@@ -14,7 +14,7 @@
     "android": {
       "adaptiveIcon": {
         "backgroundColor": "#E6F4FE",
-        "foregroundImage": "./assets/images/android-icon-foreground.png",
+        "foregroundImage": "./assets/images/android-icon-foreground.png"
       },
       "edgeToEdgeEnabled": true,
       "predictiveBackGestureEnabled": false
@@ -38,7 +38,7 @@
         }
       ],
       [
-      "expo-font",
+        "expo-font",
         {
           "fonts": [
             "./assets/fonts/Rubik-Bold.ttf",
@@ -49,7 +49,7 @@
             "./assets/fonts/Rubik-SemiBold.ttf"
           ]
         }
-      ],
+      ]
     ],
     "experiments": {
       "typedRoutes": true,

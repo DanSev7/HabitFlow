@@ -13,15 +13,15 @@ const TabIcon = ({
   title: string;
 }) => {
   return (
-    <View className="flex-1 mt-2 flex flex-col items-center ">
+    <View className="flex-1 mt-2 flex flex-col items-center">
       <Image
         source={icon}
         resizeMode="contain"
-        tintColor={focused ? "#ff0000ff" : "#d8d8d8ff"}
+        tintColor={focused ? "#ff0000ff" : "#ececec"}
         className="size-7"
       />
       <Text
-        className={`text-sm w-full text-center ${
+        className={`text-sm w-full text-center mt-1 ${
           focused ? "text-primary font-bold" : "text-inactive font-medium"
         }`}
       >
@@ -39,7 +39,7 @@ const TabLayout = () => {
         tabBarStyle: {
           backgroundColor: "#242424ff",
           position: "absolute",
-          height: 70,
+          height: 80,
           borderTopColor: "#0061FF1A",
           borderTopWidth: 1,
         },

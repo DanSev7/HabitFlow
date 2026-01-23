@@ -5,9 +5,17 @@ module.exports = {
   presets: [require("nativewind/preset")],
   theme: {
     extend: {
+      fontFamily: {
+        rubik: ['Rubik-Regular', 'sans-serif'],
+        rubikBold: ['Rubik-Bold', 'sans-serif'],
+        rubikSemiBold: ['Rubik-SemiBold', 'sans-serif'],
+        rubikLight: ['Rubik-Light', 'sans-serif'],
+        rubikExtraBold: ['Rubik-ExtraBold', 'sans-serif'],
+        rubikMedium: ['Rubik-Medium', 'sans-serif'],
+      },
       colors: {
         primary: "#ff0000",
-        inactive: "#d8d8d8",
+        inactive: "#ececec",
         background: "#242424",
         border: "#0061FF1A",
         card: "#1C1C1C",
