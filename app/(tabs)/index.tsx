@@ -11,7 +11,7 @@ import { useEffect, useState } from "react";
 import { Alert, FlatList, Text, TouchableOpacity, View } from "react-native";
 
 import CircularProgress from "@/components/CircularProgress";
-import TodoCard from "@/components/TodoCard";
+import TodoCard from "@/components/TodoLists";
 import AddTodo from "@/components/AddTodo";
 
 export default function Index() {
@@ -77,19 +77,6 @@ export default function Index() {
               )}
             </TouchableOpacity>
 
-            {/* Dark Mode Toggle */}
-            {/* <TouchableOpacity
-              onPress={() => setDarkMode(!darkMode)}
-              className={`p-2 rounded-full ${darkMode ? 'bg-white/40' : 'bg-white/40'}`}
-            >
-              {darkMode ? (
-                <Moon size={20} color="white" />
-              ) : (
-                <Sun size={20} color="white" />
-              )}
-            </TouchableOpacity> */}
-
-            {/* Refresh */}
             <TouchableOpacity onPress={handleRefresh} className={`p-2 rounded-full ${darkMode ? 'bg-white/40' : 'bg-white/40'}`}>
               <RefreshCcw size={20} color="white" />
             </TouchableOpacity>

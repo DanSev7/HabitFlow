@@ -1,4 +1,4 @@
-import { View, Text, Modal, TextInput } from 'react-native'
+import { View, Text, Modal, TextInput, TouchableOpacity } from 'react-native'
 import React from 'react'
 
 const AddTodo = ({visible, onClose}: {visible: boolean, onClose: () => void}) => {
@@ -9,7 +9,7 @@ const AddTodo = ({visible, onClose}: {visible: boolean, onClose: () => void}) =>
     transparent={true}
     onRequestClose={onClose}
     >
-        <View className="flex-1 items-center justify-center bg-black/50">
+        <View className="flex-1 items-center justify-center bg-black/20">
             <View className="w-11/12 rounded-2xl bg-white p-6">
                 <Text className="text-2xl font-bold">Add Todo</Text>
                 <Text className="mt-4 text-lg">Todo Title</Text>
