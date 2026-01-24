@@ -12,11 +12,13 @@ import { Alert, FlatList, Text, TouchableOpacity, View } from "react-native";
 
 import CircularProgress from "@/components/CircularProgress";
 import TodoCard from "@/components/TodoCard";
+import AddTodo from "@/components/AddTodo";
 
 export default function Index() {
   const [darkMode, setDarkMode] = useState(false);
   const [notificationsOn, setNotificationsOn] = useState(true);
   const [streak, setStreak] = useState(7); // Example streak count
+  const [isAddModalVisible, setIsAddModalVisible] = useState(false);
   const [now, setNow] = useState(new Date());
 
   useEffect(() => {
@@ -131,10 +133,15 @@ export default function Index() {
       <TouchableOpacity
         activeOpacity={0.8}
         className="absolute bottom-24 right-6 h-16 w-16 items-center justify-center rounded-2xl bg-primary shadow-2xl elevation-8"
-        onPress={() => Alert.alert("New Habit")}
+        onPress={() => setIsAddModalVisible(true)}
       >
         <Plus size={32} color="white" strokeWidth={3} />
       </TouchableOpacity>
+
+      <AddTodo
+        visible={isAddModalVisible}
+        onClose={() => setIsAddModalVisible(false)}
+      />
     </View>
   );
 }
