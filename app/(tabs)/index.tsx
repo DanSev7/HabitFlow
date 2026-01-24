@@ -51,60 +51,61 @@ export default function Index() {
   return (
     <View className="flex-1 bg-white ">
       {/* Header Section */}
-      <View className="relative flex justify-between items-start mb-4 h-64 flex-row bg-primary rounded-b-[2.5rem] shadow-lg elevation-5">
-        <View className="ml-4 mt-10">
-          <Text className="text-3xl text-white font-extrabold">
-            Daily Protocol
-          </Text>
-          <Text className="text-white">
-            {now.toLocaleDateString("en-US", dateOptions)}
-          </Text>
-
-          {/* <Text className="text-white font-extrabold mt-5 text-5xl">
-            {now.toLocaleTimeString("en-US", timeOptions)}
-          </Text>
-          <CircularProgress percentage={50} /> */}
-          <View className="flex-row items-center justify-between mt-4">
-            <Text className="text-white font-extrabold text-5xl">
-              {now.toLocaleTimeString("en-US", timeOptions)}
+      <View className="relative justify-between mb-4 h-64 px-6 pt-10 pb-6 bg-primary rounded-b-[2.5rem] shadow-lg elevation-5">
+        <View className="flex-row items-center justify-between">
+          <View>
+            <Text className="text-3xl text-white font-extrabold">
+              Daily Protocol
             </Text>
-            <View className="ml-2">
-              <CircularProgress percentage={50} size={70} strokeWidth={6} color="#ffffff" />
-            </View>
+            <Text className="text-white">
+              {now.toLocaleDateString("en-US", dateOptions)}
+            </Text>
+          </View>
+          <View className="flex-row gap-2">
+            <TouchableOpacity
+              className="p-2 rounded-full bg-white/40"
+              onPress={() => setDarkMode(!darkMode)}
+            >
+              <Image
+                source={darkMode ? icons.moon : icons.sun}
+                resizeMode="contain"
+                tintColor={"#ececec"}
+                className="size-5"
+              />
+            </TouchableOpacity>
+
+            <TouchableOpacity
+              className="p-2 rounded-full bg-white/40"
+              onPress={() => {
+                handleRefresh();
+              }}
+            >
+              <Image
+                source={icons.refresh}
+                resizeMode="contain"
+                tintColor={"#ececec"}
+                className="size-5"
+              />
+            </TouchableOpacity>
           </View>
         </View>
-        <View className="mr-4 mt-10 flex-row gap-2">
-          <TouchableOpacity
-            className="p-2 rounded-full bg-white/40"
-            onPress={() => setDarkMode(!darkMode)}
-          >
-            <Image
-              source={darkMode ? icons.moon : icons.sun}
-              resizeMode="contain"
-              tintColor={"#ececec"}
-              className="size-5"
-            />
-          </TouchableOpacity>
 
-          <TouchableOpacity
-            className="p-2 rounded-full bg-white/40"
-            onPress={() => {
-              handleRefresh();
-            }}
-          >
-            <Image
-              source={icons.refresh}
-              resizeMode="contain"
-              tintColor={"#ececec"}
-              className="size-5"
+        <View className="flex-row items-center justify-between">
+          <Text className="text-white font-extrabold text-5xl">
+            {now.toLocaleTimeString("en-US", timeOptions)}
+          </Text>
+            <CircularProgress
+              percentage={50}
+              size={70}
+              strokeWidth={6}
+              color="#ffffff"
             />
-          </TouchableOpacity>
         </View>
       </View>
 
       <FlatList
         data={[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}
-        renderItem={(item) => <TodoCard />}
+        renderItem={(item) => <TodoCard/>}
         className="px-4 "
       />
 
